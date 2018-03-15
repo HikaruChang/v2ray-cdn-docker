@@ -37,7 +37,6 @@ COPY config.json /etc/v2ray/
 COPY v2ray.conf /root/
 COPY nginx.conf /root/
 
-RUN rm -rf /etc/v2ray/config.json
 COPY config.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/config.sh
 
