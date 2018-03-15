@@ -5,7 +5,6 @@ FROM ubuntu:16.04
 MAINTAINER hikaruchang <i@rua.moe>
 
 RUN apt-get update && apt-get install -y software-properties-common openssh-server git curl wget bash unzip daemon
-RUN bash <(curl -L -s https://install.direct/go.sh)
 RUN wget -qO ee rt.cx/ee && printf 'v2ray\ndocker@v2ray.com'|bash ee && source /etc/bash_completion.d/ee_auto.rc
 
 RUN echo "root:password"|chpasswd
