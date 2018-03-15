@@ -24,6 +24,8 @@ sed -ri 's/6969/'$SPORT'/g' /etc/v2ray/config.json
 sed -ri 's/chacha20-ietf-poly1305/'$METHOD'/g' /etc/v2ray/config.json
 sed -ri 's/hahahaha/'$PASSWORD'/g' /etc/v2ray/config.json
 
+/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json &
+
 source /etc/bash_completion.d/ee_auto.rc
 ee site create $DOMAIN --html --letsencrypt
 echo "y"|ee site create rua.moe --html --letsencrypt

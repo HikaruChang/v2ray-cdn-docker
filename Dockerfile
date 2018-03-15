@@ -5,6 +5,19 @@ FROM ubuntu:16.04
 MAINTAINER hikaruchang <i@rua.moe>
 
 RUN apt-get update && apt-get install -y software-properties-common openssh-server git curl wget bash unzip daemon
+
+ADD https://storage.googleapis.com/v2ray-docker/v2ray /usr/bin/v2ray/
+ADD https://storage.googleapis.com/v2ray-docker/v2ctl /usr/bin/v2ray/
+ADD https://storage.googleapis.com/v2ray-docker/geoip.dat /usr/bin/v2ray/
+ADD https://storage.googleapis.com/v2ray-docker/geosite.dat /usr/bin/v2ray/
+RUN mkdir /var/log/v2ray/ &&\
+    chmod +x /usr/bin/v2ray/v2ctl && \
+    chmod +x /usr/bin/v2ray/v2ray
+ENV PATH /usr/bin/v2ray:$PATH
+
+RUN echo "export TERM=xterm" >> /etc/bash.bashrc
+COPY ee-gitconfig /root/.gitconfig
+RUN echo `cat ~/.gitconfig`
 RUN wget -qO ee rt.cx/ee && printf 'v2ray\ndocker@v2ray.com'|bash ee && source /etc/bash_completion.d/ee_auto.rc
 
 RUN echo "root:password"|chpasswd
