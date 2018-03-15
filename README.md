@@ -1,8 +1,13 @@
 # v2ray with cdn
-这是一个v2ray+nginx+tls+netspeeder+ssh Docker <br>
-使用vmess+shadowsocks方案 <br>
-<br>
-vmess加密为自动模式，shadowsocks默认chacha20-ietf-poly1305 <br>
+这是一个v2ray+nginx+tls+netspeeder+ssh Docker
+
+
+使用vmess+shadowsocks方案
+
+
+vmess加密为自动模式，shadowsocks默认chacha20-ietf-poly1305
+
+因为使用了Let's Encrypt，所以需要映射80端口来签证书。
 
 ## 参数说明
 ```
