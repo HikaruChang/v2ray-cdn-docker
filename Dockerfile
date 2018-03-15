@@ -16,7 +16,7 @@ RUN mkdir /var/log/v2ray/ &&\
 ENV PATH /usr/bin/v2ray:$PATH
 
 RUN echo "export TERM=xterm" >> /etc/bash.bashrc
-RUN wget -qO ee rt.cx/ee && printf 'v2ray\ndocker@v2ray.com'|bash ee && source /etc/bash_completion.d/ee_auto.rc
+RUN wget -qO ee rt.cx/ee && printf 'v2ray\ndocker@v2ray.com'|sudo bash ee
 
 RUN echo "root:password"|chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
