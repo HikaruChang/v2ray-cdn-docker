@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 
 MAINTAINER hikaruchang <i@rua.moe>
 
-RUN apt-get update && apt-get install -y software-properties-common openssh-server git curl wget bash unzip daemon
+RUN apt-get update && apt-get install -y software-properties-common openssh-server git curl wget bash unzip daemon sudo ntp
 
 ADD https://storage.googleapis.com/v2ray-docker/v2ray /usr/bin/v2ray/
 ADD https://storage.googleapis.com/v2ray-docker/v2ctl /usr/bin/v2ray/
