@@ -21,8 +21,8 @@
                     "wsSettings":{
                             "connectionReuse": true,
                             "path": "/enterv2ray/"
-                            }
                     }
+            }
     },
     "inboundDetour": [
         {
