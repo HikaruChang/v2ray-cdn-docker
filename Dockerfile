@@ -4,12 +4,9 @@ FROM ubuntu:14.04.3
 
 MAINTAINER hikaruchang <i@rua.moe>
 
-RUN apt-get update && \
-    apt-get install -y libtimedate-perl software-properties-common openssh-server git curl wget bash unzip daemon && \
-    bash <(curl -L -s https://install.direct/go.sh) && \
-    wget -qO ee rt.cx/ee && \
-    printf 'v2ray\ndocker@v2ray.com'|bash ee && \
-    source /etc/bash_completion.d/ee_auto.rc
+RUN apt-get update && apt-get install -y libtimedate-perl software-properties-common openssh-server git curl wget bash unzip daemon
+RUN bash <(curl -L -s https://install.direct/go.sh)
+RUN wget -qO ee rt.cx/ee && printf 'v2ray\ndocker@v2ray.com'|bash ee && source /etc/bash_completion.d/ee_auto.rc
 
 RUN echo "root:password"|chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
