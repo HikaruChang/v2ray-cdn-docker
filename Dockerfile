@@ -2,7 +2,7 @@
 
 FROM ubuntu:16.04
 
-MAINTAINER hikaruchang <i@rua.moe>
+MAINTAINER xrw001 <xrw001@gmail.com>
 
 RUN apt-get update && apt-get install -y software-properties-common openssh-server git curl wget bash unzip daemon sudo ntp libnet1-dev libpcap0.8-dev
 
@@ -16,7 +16,7 @@ RUN mkdir /var/log/v2ray/ &&\
 ENV PATH /usr/bin/v2ray:$PATH
 
 RUN echo "export TERM=xterm" >> /etc/bash.bashrc
-RUN wget -qO ee rt.cx/ee && printf 'v2ray\ndocker@v2ray.com'|sudo bash ee
+RUN wget -qO ee rt.cx/ee && printf 'v2ray\xrw001@gmail.com'|sudo bash ee
 
 RUN echo "root:password"|chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
